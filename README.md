@@ -59,6 +59,8 @@ optional arguments:
 
 ## Comparison with the original rsync
 
+![Comparison](https://github.com/rioriost/homebrew-parasync/raw/main/rsync_parasync.png)
+
 * Environment
   * Local: macOS Sequoia 15.3, MacStudio 2022, Apple M1 Max (10-Core), 64GB Mem, 512GB SSD
   * Remote: Red Hat Enterprise Linux 8.10, AMD Ryzen 5 5600G (12-Core), 64GB Mem, 2TB NVMe Gen4 SSD
