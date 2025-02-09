@@ -1,17 +1,15 @@
-# parsync
+# parasync
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Overview
 
-parsync is a parallelized rsync tool written in Python.
+parasync is a parallelized rsync tool written in Python.
 It is designed to be used in a situation where you have a large number of files to transfer and you want to utilize multiple CPU cores to speed up the transfer.
 It can also suspend/resume rsync processes based on the CPU usage to avoid overloading the system.
 
 It's inspired by [parsync](https://github.com/hjmangalam/parsync) but written in Python.
 I've been using the original parsync for a long time, but it's no longer maintained and has some issues. So I decided to rewrite it in Python.
-
-And I'm eager not change my scripts using parsync. So, I decided to keep the same command name with the original parsync.
 
 ## Table of Contents
 
@@ -26,19 +24,19 @@ And I'm eager not change my scripts using parsync. So, I decided to keep the sam
 Just add tap and install homebrew package.
 
 ```bash
-brew tap rioriost/parsync
-brew install parsync
+brew tap rioriost/parasync
+brew install parasync
 ```
 
 You can also install it on Linux with homebrew or install it from the source code.
 
 ## Usage
 
-Execute parsync command.
+Execute parasync command.
 
 ```bash
-parsync --help
-usage: parsync [-h] [--max-procs MAX_PROCS] [--suspend-threshold SUSPEND_THRESHOLD] [--resume-threshold RESUME_THRESHOLD] [--compress] [--progress]
+parasync --help
+usage: parasync [-h] [--max-procs MAX_PROCS] [--suspend-threshold SUSPEND_THRESHOLD] [--resume-threshold RESUME_THRESHOLD] [--compress] [--progress]
                local_dir remote_path
 
 A tool to transfer all files under a specified directory to a remote location using rsync.
@@ -68,54 +66,54 @@ optional arguments:
 
 * original rsync: 932 Mbps
 ```bash
-rsync -av --progress /Users/rifujita/parsync_src/ rsync://192.168.1.2/parsync_tgt/
+rsync -av --progress /Users/rifujita/parasync_src/ rsync://192.168.1.2/parasync_tgt/
 ...
 sent 46,861,733,173 bytes  received 8,665 bytes  122,194,893.97 bytes/sec
 total size is 46,850,265,318  speedup is 1.00
 ```
 
-* parsync (--max-procs 10): 3.5 Gbps
+* parasync (--max-procs 10): 3.5 Gbps
 ```bash
-parsync --max-procs 10 --progress /Users/rifujita/parsync_src/ rsync://192.168.1.2/parsync_tgt/
+parasync --max-procs 10 --progress /Users/rifujita/parasync_src/ rsync://192.168.1.2/parasync_tgt/
 ...
 [Summary] Transferred file count: 454 files, Data transferred: 43.6 GB, Average transfer speed: 3.5 Gbps (Total time: 107.8 seconds)
 ```
 
-* parsync (default: --max-procs 9): 5.1 Gbps
+* parasync (default: --max-procs 9): 5.1 Gbps
 ```bash
-parsync --progress /Users/rifujita/parsync_src/ rsync://192.168.1.2/parsync_tgt/
+parasync --progress /Users/rifujita/parasync_src/ rsync://192.168.1.2/parasync_tgt/
 ...
 [Summary] Transferred file count: 454 files, Data transferred: 43.6 GB, Average transfer speed: 5.1 Gbps (Total time: 74.0 seconds)
 ```
 
-* parsync (--max-procs 8): 4.5 Gbps
+* parasync (--max-procs 8): 4.5 Gbps
 ```bash
-parsync --max-procs 8 --progress /Users/rifujita/parsync_src/ rsync://192.168.1.2/parsync_tgt/
+parasync --max-procs 8 --progress /Users/rifujita/parasync_src/ rsync://192.168.1.2/parasync_tgt/
 ...
 [Summary] Transferred file count: 454 files, Data transferred: 43.6 GB, Average transfer speed: 4.5 Gbps (Total time: 83.2 seconds)
 ```
 
-* parsync (--max-procs 7): 4.0 Gbps
+* parasync (--max-procs 7): 4.0 Gbps
 ```bash
-parsync --max-procs 7 --progress /Users/rifujita/parsync_src/ rsync://192.168.1.2/parsync_tgt/
+parasync --max-procs 7 --progress /Users/rifujita/parasync_src/ rsync://192.168.1.2/parasync_tgt/
 ...
 [Summary] Transferred file count: 454 files, Data transferred: 43.6 GB, Average transfer speed: 4.0 Gbps (Total time: 93.4 seconds)
 ```
 
-* parsync (--max-procs 6): 3.0 Gbps
+* parasync (--max-procs 6): 3.0 Gbps
 ```bash
-parsync --max-procs 6 --progress /Users/rifujita/parsync_src/ rsync://192.168.1.2/parsync_tgt/
+parasync --max-procs 6 --progress /Users/rifujita/parasync_src/ rsync://192.168.1.2/parasync_tgt/
 ...
 [Summary] Transferred file count: 454 files, Data transferred: 43.6 GB, Average transfer speed: 3.0 Gbps (Total time: 125.2 seconds)
 ```
 
 ### Summary
-* parsync is faster than the original rsync. But the best number of --max-procs depends on the environment, number of CPU cores and IOPS of SSDs on the local and remote hosts, network bandwidth, and so on.
+* parasync is faster than the original rsync. But the best number of --max-procs depends on the environment, number of CPU cores and IOPS of SSDs on the local and remote hosts, network bandwidth, and so on.
 
 ## Limitations
-* 0.1.0: parsync uses rsync, not scp or sftp, and so on. If a directory specified does not exist on the remote destination, it fails. Because ryync does not fork shell on the remote host.
-  e.g., `parsync /path/to/local_dir/ rsync://host_name/path/to/remote_dir/` fails if `/path` does not exist on the remote host.
-  And, parsync does not use 'compress' option of rsync. With wide network bandwidth, it may be better not to use 'compress' option.
+* 0.1.0: parasync uses rsync, not scp or sftp, and so on. If a directory specified does not exist on the remote destination, it fails. Because ryync does not fork shell on the remote host.
+  e.g., `parasync /path/to/local_dir/ rsync://host_name/path/to/remote_dir/` fails if `/path` does not exist on the remote host.
+  And, parasync does not use 'compress' option of rsync. With wide network bandwidth, it may be better not to use 'compress' option.
 
 ## Release Notes
 

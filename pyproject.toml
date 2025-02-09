@@ -1,11 +1,11 @@
 [project]
-name = "parsync"
+name = "parasync"
 authors = [
     {name = "Rio Fujita", email = "rifujita@microsoft.com"},
 ]
 version = "0.1.0"
 license = {file = "LICENSE"}
-description = "parsync is a parallelized rsync tool written in Python."
+description = "parasync is a parallelized rsync tool written in Python."
 readme = {file = "README.md", content-type = "text/markdown"}
 requires-python = ">=3.9"
 dependencies = [
@@ -13,29 +13,26 @@ dependencies = [
 ]
 
 [project.scripts]
-parsync = "parsync.main:main"
+parasync = "parasync.main:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build]
-package-dir = {"" = "src"}
-
 [tool.hatch.build.targets.wheel]
-packages = ["parsync"]
+packages = ["src/parasync"]
 
 [project.urls]
-Homepage = "https://github.com/rioriost/homebrew-parsync"
-Issues = "https://github.com/rioriost/homebrew-parsync/issues"
+Homepage = "https://github.com/rioriost/homebrew-parasync"
+Issues = "https://github.com/rioriost/homebrew-parasync/issues"
 
 [tool.hatch.build.targets.sdist]
 include = [
-  "src/parsync/*.py",
+  "src/parasync/*.py",
   "*.py",
 ]
 exclude = [
-  "parsync.rb",
+  "parasync.rb",
   "uv.lock",
   "dist/.DS_Store",
 ]

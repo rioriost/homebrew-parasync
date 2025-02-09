@@ -12,7 +12,7 @@ from unittest import mock
 # Add source directory to sys.path if your module is stored in src folder for example.
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 
-from parsync.main import Helper, RsyncTask, RsyncParallelExecutor, progress_monitor
+from parasync.main import Helper, RsyncTask, RsyncParallelExecutor, progress_monitor
 
 
 class TestHelperFunctions(unittest.TestCase):
