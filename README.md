@@ -1,6 +1,7 @@
 # parasync
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 
 ## Overview
 
@@ -118,6 +119,9 @@ parasync --max-procs 6 --progress /Users/rifujita/parasync_src/ rsync://192.168.
   And, parasync does not use 'compress' option of rsync. With wide network bandwidth, it may be better not to use 'compress' option.
 
 ## Release Notes
+
+### 0.1.1 Release
+* Updated for the dependencies.
 
 ### 0.1.0 Release
 * First release.
