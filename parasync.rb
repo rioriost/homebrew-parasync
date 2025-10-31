@@ -3,8 +3,8 @@ class Parasync < Formula
 
   desc "parasync is a parallelized rsync tool written in Python."
   homepage "https://github.com/rioriost/homebrew-parasync/"
-  url "https://files.pythonhosted.org/packages/c0/54/42a9591a339d82cf5bfe6dd8bf23472208dc92e16f305f291529742150af/parasync-0.1.1.tar.gz"
-  sha256 "113d5d5b98de60faadf0a7e43c0afeb785679ee07d23ad93b2e5cd9741ad0977"
+  url "https://files.pythonhosted.org/packages/35/56/4c9b5957d0edb5a33459744496dc3752992c1ae5c0a740a96c3170de4193/parasync-0.1.3.tar.gz"
+  sha256 "2471a3f5a2093628ca88fdf665d998f4e8dee40269a54097f9e5c8a21ad1e18f"
   license "MIT"
 
   depends_on "python@3.9"
