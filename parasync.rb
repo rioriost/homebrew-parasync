@@ -3,15 +3,15 @@ class Parasync < Formula
 
   desc "parasync is a parallelized rsync tool written in Python."
   homepage "https://github.com/rioriost/homebrew-parasync/"
-  url "https://files.pythonhosted.org/packages/35/56/4c9b5957d0edb5a33459744496dc3752992c1ae5c0a740a96c3170de4193/parasync-0.1.3.tar.gz"
-  sha256 "2471a3f5a2093628ca88fdf665d998f4e8dee40269a54097f9e5c8a21ad1e18f"
+  url "https://files.pythonhosted.org/packages/11/24/09d06b6a1b108e18b176a6319fc5e0a286df05dccf63b270eeb99d0d6d41/parasync-0.1.4.tar.gz"
+  sha256 "95c1d3789bd96d124dd63970fc8a674079745141bab9475deaeb7514d8cbc6ea"
   license "MIT"
 
   depends_on "python@3.9"
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/cd/ec/7b8e6b9b1d22708138630ef34c53ab2b61032c04f16adfdbb96791c8c70c/psutil-7.1.2.tar.gz"
-    sha256 "aa225cdde1335ff9684708ee8c72650f6598d5ed2114b9a7c5802030b1785018"
+    url "https://files.pythonhosted.org/packages/e1/88/bdd0a41e5857d5d703287598cbf08dad90aed56774ea52ae071bae9071b6/psutil-7.1.3.tar.gz"
+    sha256 "6c86281738d77335af7aec228328e944b30930899ea760ecf33a4dba66be5e74"
   end
 
   def install
