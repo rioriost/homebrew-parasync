@@ -3,7 +3,7 @@ name = "parasync"
 authors = [
     {name = "Rio Fujita", email = "rifujita@microsoft.com"},
 ]
-version = "0.1.4"
+version = "0.1.5"
 license = {file = "LICENSE"}
 description = "parasync is a parallelized rsync tool written in Python."
 readme = {file = "README.md", content-type = "text/markdown"}
@@ -35,4 +35,5 @@ exclude = [
   "parasync.rb",
   "uv.lock",
   "dist/.DS_Store",
+  ".envrc",
 ]
