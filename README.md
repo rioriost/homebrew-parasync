@@ -120,6 +120,12 @@ parasync --max-procs 6 --progress /Users/rifujita/parasync_src/ rsync://192.168.
 
 ## Release Notes
 
+### 0.1.7 Release
+* Dependency update.
+
+### 0.1.6 Release
+* Dependency update.
+
 ### 0.1.5 Release
 * Dependency update.
 
